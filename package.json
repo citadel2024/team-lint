@@ -1,0 +1,152 @@
+{
+    "name": "@citadel2024/team-lint",
+    "version": "1.0.3",
+    "homepage": "https://github.com/citadel2024/team-lint",
+    "bugs": {
+        "url": "https://github.com/citadel2024/team-lint/issues/new"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/citadel2024/team-lint.git"
+    },
+    "license": "MIT",
+    "author": "citadel2024",
+    "sideEffects": false,
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "father build",
+        "dev": "father dev",
+        "lint": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",
+        "lint:md": "remark . --quiet --output",
+        "lint:style": "stylelint \"{src,tests}/**/*.{css,less,js,jsx,ts,tsx}\" --fix",
+        "prepack": "npm run build && clean-pkg-json",
+        "prepare": "husky install && npm run build",
+        "prettier": "prettier -c --write \"**/**\"",
+        "release": "semantic-release",
+        "start": "npm run dev",
+        "test": "father doctor",
+        "type-check": "tsc -p tsconfig-check.json"
+    },
+    "lint-staged": {
+        "*.md": [
+            "remark --quiet --output --",
+            "prettier --write --no-error-on-unmatched-pattern"
+        ],
+        "*.json": [
+            "prettier --write --no-error-on-unmatched-pattern"
+        ],
+        "*.{css,less}": [
+            "stylelint --fix",
+            "prettier --write"
+        ],
+        "*.{js,jsx}": [
+            "prettier --write",
+            "stylelint --fix",
+            "eslint --fix"
+        ],
+        "*.{ts,tsx}": [
+            "prettier --parser=typescript --write",
+            "stylelint --fix",
+            "eslint --fix"
+        ]
+    },
+    "dependencies": {
+        "@gitmoji/commit-types": "1.1.5",
+        "@semantic-release/changelog": "^6",
+        "@semantic-release/git": "^10",
+        "@semantic-release/github": "npm:@achingbrain/semantic-release-github",
+        "@semrel-extra/npm": "^1",
+        "@trivago/prettier-plugin-sort-imports": "^4",
+        "@types/semantic-release": "^17.2.0",
+        "@typescript-eslint/eslint-plugin": "^7",
+        "@typescript-eslint/parser": "^7",
+        "@umijs/babel-preset-umi": "^4",
+        "@umijs/lint": "^4",
+        "commitlint-config-gitmoji": "^2",
+        "conventional-changelog-gitmoji-config": "1.5.2",
+        "eslint-config-prettier": "^9",
+        "eslint-import-resolver-alias": "^1",
+        "eslint-import-resolver-typescript": "^3",
+        "eslint-plugin-import": "^2",
+        "eslint-plugin-jest": "^28.0.0",
+        "eslint-plugin-react": "^7",
+        "eslint-plugin-react-hooks": "^4",
+        "eslint-plugin-simple-import-sort": "^12",
+        "eslint-plugin-sort-keys-fix": "^1",
+        "eslint-plugin-typescript-sort-keys": "^3",
+        "eslint-plugin-unicorn": "^52.0.0",
+        "eslint-plugin-unused-imports": "^3",
+        "gatsby-remark-find-replace": "^0.3.0",
+        "postcss-less": "^6",
+        "postcss-styled-syntax": "^0.6",
+        "prettier-plugin-organize-imports": "^3",
+        "prettier-plugin-packagejson": "^2",
+        "prettier-plugin-sh": "^0.14",
+        "prettier-plugin-sort-json": "^4",
+        "remark-frontmatter": "^5",
+        "remark-gfm": "^3",
+        "remark-lint": "^9",
+        "remark-lint-checkbox-content-indent": "^4",
+        "remark-lint-frontmatter-schema": "^3",
+        "remark-lint-heading-whitespace": "^1",
+        "remark-lint-linebreak-style": "^3",
+        "remark-lint-list-item-indent": "^3",
+        "remark-lint-list-item-spacing": "^4",
+        "remark-lint-no-duplicate-headings-in-section": "^3",
+        "remark-lint-no-empty-sections": "^4",
+        "remark-lint-no-empty-url": "^3",
+        "remark-lint-no-file-name-irregular-characters": "^2",
+        "remark-lint-no-heading-indent": "^4",
+        "remark-lint-no-heading-like-paragraph": "^3",
+        "remark-lint-no-paragraph-content-indent": "^4",
+        "remark-lint-no-reference-like-url": "^3",
+        "remark-lint-no-shell-dollars": "^3",
+        "remark-lint-no-tabs": "^3",
+        "remark-lint-no-unneeded-full-reference-image": "^3",
+        "remark-lint-no-unneeded-full-reference-link": "^3",
+        "remark-lint-ordered-list-marker-value": "^3",
+        "remark-lint-write-good": "^1",
+        "remark-pangu": "^2",
+        "remark-preset-lint-consistent": "^5",
+        "remark-preset-lint-markdown-style-guide": "^5",
+        "remark-preset-lint-recommended": "^6",
+        "remark-remove-unused-definitions": "^1",
+        "remark-sort-definitions": "^1",
+        "remark-textr": "^5",
+        "remark-toc": "^9",
+        "semantic-release-config-gitmoji": "^1",
+        "stylelint-config-clean-order": "^5",
+        "stylelint-config-recommended": "^14",
+        "stylelint-less": "^3",
+        "stylelint-order": "^6",
+        "unist-util-visit": "^5.0.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19",
+        "@types/node": "^20",
+        "clean-pkg-json": "^1",
+        "commitlint": "^19",
+        "eslint": "^8",
+        "father": "^4",
+        "husky": "^9",
+        "lint-staged": "^15",
+        "prettier": "^3",
+        "remark": "^14",
+        "remark-cli": "^11",
+        "semantic-release": "^21",
+        "stylelint": "^16",
+        "typescript": "^5"
+    },
+    "peerDependencies": {
+        "eslint": ">=8.42",
+        "prettier": ">=3"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
+    }
+}
