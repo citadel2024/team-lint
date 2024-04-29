@@ -44,12 +44,10 @@
             "prettier --write"
         ],
         "*.{js,jsx}": [
-            "prettier --write",
             "stylelint --fix",
             "eslint --fix"
         ],
         "*.{ts,tsx}": [
-            "prettier --parser=typescript --write",
             "stylelint --fix",
             "eslint --fix"
         ]
@@ -68,7 +66,6 @@
         "@umijs/lint": "^4",
         "commitlint-config-gitmoji": "^2",
         "conventional-changelog-gitmoji-config": "1.5.2",
-        "eslint-config-prettier": "^9",
         "eslint-import-resolver-alias": "^1",
         "eslint-import-resolver-typescript": "^3",
         "eslint-plugin-import": "^2",
@@ -131,6 +128,8 @@
         "clean-pkg-json": "^1",
         "commitlint": "^19",
         "eslint": "^8",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
         "father": "^4",
         "husky": "^9",
         "lint-staged": "^15",
