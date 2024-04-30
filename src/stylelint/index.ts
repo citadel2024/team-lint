@@ -1,10 +1,6 @@
 export default {
     $schema: 'https://json.schemastore.org/stylelintrc',
-    extends: [
-        require.resolve('@umijs/lint/dist/config/stylelint'),
-        'stylelint-config-recommended',
-        'stylelint-config-clean-order',
-    ],
+    extends: ['stylelint-config-recommended', 'stylelint-config-clean-order'],
     overrides: [
         {
             customSyntax: 'postcss-less',
