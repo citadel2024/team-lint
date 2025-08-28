@@ -1,5 +1,5 @@
 export default {
-    // $schema: 'https://json.schemastore.org/stylelintrc',
+    $schema: 'https://json.schemastore.org/stylelintrc',
     extends: ['stylelint-config-recommended', 'stylelint-config-clean-order'],
     overrides: [
         {

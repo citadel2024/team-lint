@@ -5,6 +5,6 @@ import createConfig from './createConfig';
 const defaultConfig: Options = createConfig();
 
 export default {
-    // $schema: 'https://json.schemastore.org/semantic-release',
+    $schema: 'https://json.schemastore.org/semantic-release',
     ...defaultConfig,
 };

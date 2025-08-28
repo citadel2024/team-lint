@@ -1,5 +1,5 @@
 export default {
-    // $schema: 'https://json.schemastore.org/commitlintrc',
+    $schema: 'https://json.schemastore.org/commitlintrc',
     extends: [],
     rules: {
         'footer-leading-blank': [0, 'never'],

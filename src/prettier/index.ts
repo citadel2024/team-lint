@@ -1,5 +1,5 @@
 export default {
-    // $schema: 'https://json.schemastore.org/prettierrc',
+    $schema: 'https://json.schemastore.org/prettierrc',
     arrowParens: 'always',
     bracketSpacing: true,
     endOfLine: 'lf',
