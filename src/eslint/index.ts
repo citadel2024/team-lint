@@ -5,7 +5,6 @@ import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
 import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import eslintPluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
-import eslintPluginTypescriptSortKeys from 'eslint-plugin-typescript-sort-keys';
 import {FlatCompat} from "@eslint/eslintrc";
 import globals from 'globals';
 
@@ -56,7 +55,6 @@ export default [
             'unused-imports': eslintPluginUnusedImports,
             'simple-import-sort': eslintPluginSimpleImportSort,
             'sort-keys-fix': eslintPluginSortKeysFix,
-            'typescript-sort-keys': eslintPluginTypescriptSortKeys,
             'react-hooks': eslintPluginReactHooks,
             'prettier': eslintPluginPrettier
         },
@@ -103,8 +101,6 @@ export default [
             'react/react-in-jsx-scope': 0,
             'simple-import-sort/exports': 'error',
             'sort-keys-fix/sort-keys-fix': 'error',
-            'typescript-sort-keys/interface': 'error',
-            'typescript-sort-keys/string-enum': 'error',
             'unicorn/explicit-length-check': 'warn',
             'unicorn/filename-case': 0,
             'unicorn/import-style': 0,

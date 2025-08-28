@@ -59,7 +59,6 @@
         "@semantic-release/github": "npm:@achingbrain/semantic-release-github@^0.0.2",
         "@semrel-extra/npm": "^1.2.2",
         "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-        "@types/semantic-release": "^21.1.0",
         "@typescript-eslint/eslint-plugin": "^8.41.0",
         "@typescript-eslint/parser": "^8.41.0",
         "commitlint-config-gitmoji": "^2.3.1",
@@ -74,7 +73,6 @@
         "eslint-plugin-react-hooks": "^5.2.0",
         "eslint-plugin-simple-import-sort": "^12.1.1",
         "eslint-plugin-sort-keys-fix": "^1.1.2",
-        "eslint-plugin-typescript-sort-keys": "^3.3.0",
         "eslint-plugin-unicorn": "^60.0.0",
         "eslint-plugin-unused-imports": "^4.2.0",
         "gatsby-remark-find-replace": "^0.3.0",
@@ -143,7 +141,6 @@
         "eslint": ">=9",
         "prettier": ">=3"
     },
-    "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b",
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.org"
