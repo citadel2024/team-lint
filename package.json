@@ -24,7 +24,7 @@
         "lint:md": "remark . --quiet --output",
         "lint:style": "stylelint \"{src,tests}/**/*.{css,less,js,jsx,ts,tsx}\" --fix",
         "prepack": "npm run build && clean-pkg-json",
-        "prepare": "husky install && npm run build",
+        "prepare": "husky && npm run build",
         "prettier": "prettier -c --write \"**/**\"",
         "release": "semantic-release",
         "start": "npm run dev",
