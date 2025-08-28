@@ -2,7 +2,7 @@ import { remarkGfmHighlight } from './remarkGfmHighlight';
 import { replaceNBSP } from './remarkTextrPlugins';
 
 export default {
-    $schema: 'https://json.schemastore.org/remarkrc',
+    // $schema: 'https://json.schemastore.org/remarkrc',
     plugins: [
         'remark-gfm',
         'remark-frontmatter',
