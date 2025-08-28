@@ -1,49 +1,35 @@
 name: Build and Release
 
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
 
 jobs:
-  release:
-    name: release
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-    steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v3
-          with:
-              node-version: 20
-              cache: "pnpm"
+    release:
+        name: release
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write # to be able to publish a GitHub release
+            issues: write # to be able to comment on released issues
+            pull-requests: write # to be able to comment on released pull requests
+        steps:
+            - uses: actions/checkout@v4
 
-        - name: Install pnpm
-          run: npm install -g pnpm
+            - name: Install bun
+              uses: oven-sh/setup-bun@v1
 
-        - name: Cache pnpm
-          uses: actions/cache@v3
-          with:
-              path: |
-                  ~/.pnpm-store
-                  node_modules
-              key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-              restore-keys: |
-                  ${{ runner.os }}-pnpm-
+            - name: Install deps
+              run: bun i
 
-        - name: Install deps
-          run: pnpm install
+            - name: Test
+              run: bun run test
 
-        - name: Test
-          run: pnpm run test
+            - name: Build
+              run: bun run build
 
-        - name: Build
-          run: pnpm run build
-
-        - name: Release
-          run: pnpm run release
-          env:
-              GH_TOKEN: ${{ secrets.GH_TOKEN }}
-              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - name: Release
+              run: bun run release
+              env:
+                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
