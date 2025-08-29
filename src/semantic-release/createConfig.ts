@@ -51,7 +51,7 @@ export const createConfig = (options?: Options): SemRelOptions => {
         [
             '@semantic-release/release-notes-generator',
             {
-                config: 'conventional-changelog-gitmoji-config',
+                preset: 'conventionalcommits',
             },
         ],
         [
