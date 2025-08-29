@@ -14,6 +14,7 @@ export default {
         'remark-sort-definitions',
         ['remark-toc', { heading: 'TOC', maxDepth: 3 }],
         'remark-remove-unused-definitions',
+        'remark-lint-unordered-list-marker-style',
 
         // ----- Presets -----------------------------------------------------------
         'remark-preset-lint-markdown-style-guide',
@@ -39,7 +40,7 @@ export default {
         'remark-lint-frontmatter-schema',
 
         // ----- Overrides ---------------------------------------------------------
-        ['remark-lint-list-item-indent', 'space'],
+        ['remark-lint-list-item-indent', 'one'],
         ['remark-lint-list-item-spacing', { checkBlanks: true }],
         ['remark-lint-no-duplicate-headings', false],
         ['remark-lint-no-file-name-irregular-characters', '\\.a-zA-Z0-9-_'],
@@ -52,7 +53,7 @@ export default {
         bullet: '-',
         emphasis: '*',
         fences: true,
-        listItemIndent: 1,
+        listItemIndent: 'tab',
         rule: '-',
         strong: '*',
         tightDefinitions: true,
