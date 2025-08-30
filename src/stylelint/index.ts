@@ -1,6 +1,6 @@
 export default {
     $schema: 'https://json.schemastore.org/stylelintrc',
-    extends: ['stylelint-config-recommended', 'stylelint-config-clean-order'],
+    extends: ['stylelint-config-standard', 'stylelint-config-clean-order'],
     overrides: [
         {
             customSyntax: 'postcss-less',
