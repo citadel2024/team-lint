@@ -20,6 +20,7 @@
     "scripts": {
         "build": "father build",
         "dev": "father dev",
+        "doctor": "father doctor",
         "lint": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",
         "lint:md": "remark . --quiet --output",
         "lint:style": "stylelint \"{src,tests}/**/*.{css,less,js,jsx,ts,tsx}\" --fix",
@@ -27,29 +28,25 @@
         "prepare": "husky && npm run build",
         "prettier": "prettier -c --write \"**/**\"",
         "release": "semantic-release",
-        "test": "father doctor",
-        "test:stylelint": "npx --node-options=--experimental-vm-modules jest tests/stylelint/stylelint.test.ts",
-        "type-check": "tsc -p tsconfig-check.json"
+        "test": "vitest run",
+        "test:coverage": "vitest run --coverage"
     },
     "lint-staged": {
         "*.md": [
             "remark --quiet --output --",
-            "prettier --write --no-error-on-unmatched-pattern"
+            "prettier --write"
         ],
         "*.json": [
-            "prettier --write --no-error-on-unmatched-pattern"
+            "prettier --write"
         ],
-        "*.{css,less}": [
+        "src/**/*.{css,less}": [
             "stylelint --fix",
             "prettier --write"
         ],
-        "*.{js,jsx}": [
+        "src/**/*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
             "stylelint --fix",
-            "eslint --fix"
-        ],
-        "*.{ts,tsx}": [
-            "stylelint --fix",
-            "eslint --fix"
+            "prettier --write"
         ]
     },
     "dependencies": {
@@ -128,21 +125,19 @@
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",
-        "@types/jest": "^30.0.0",
         "@types/node": "^24.3.0",
         "clean-pkg-json": "^1.3.0",
         "commitlint": "^19.8.1",
         "eslint": "^9.34.0",
         "father": "^4.6.3",
         "husky": "^9.1.7",
-        "jest": "^30.1.1",
         "lint-staged": "^16.1.5",
         "prettier": "^3.6.2",
         "remark": "^15.0.1",
         "remark-cli": "^12.0.1",
         "stylelint": "^16.23.1",
-        "ts-jest": "^29.4.1",
-        "typescript": "^5.9.2"
+        "typescript": "^5.9.2",
+        "vitest": "^3.2.4"
     },
     "peerDependencies": {
         "eslint": ">=9",
