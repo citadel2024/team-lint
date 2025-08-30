@@ -4,12 +4,14 @@ on:
     push:
         branches:
             - master
+        tags:
+            - 'v*'
 permissions:
     contents: write
 
 jobs:
-    release:
-        name: release
+    build_and_release:
+        name: Build and Release
         runs-on: ubuntu-latest
         permissions:
             contents: write # to be able to publish a GitHub release
@@ -31,7 +33,9 @@ jobs:
               run: bun run build
 
             - name: Release
+              if: startsWith(github.ref, 'refs/tags/')
               run: bun run release
               env:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
