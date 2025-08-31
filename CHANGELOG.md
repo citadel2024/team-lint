@@ -4,6 +4,20 @@
 # Changelog
 ```
 
+## [1.5.0](https://github.com/citadel2024/team-lint/compare/v1.4.1...v1.5.0) (2025-08-31)
+
+### Features
+
+- **gha:** reset gha workflow. ([9a26c99](https://github.com/citadel2024/team-lint/commit/9a26c9920e549294cd246b87c47edf798634f400))
+- **test:** add more UTs. ([ae532d5](https://github.com/citadel2024/team-lint/commit/ae532d5f5e53a6fa5e9dadd235bbf762ab7baddf))
+- **test:** use vitest to replace jest and add more UTs. ([883b046](https://github.com/citadel2024/team-lint/commit/883b046f85c9926f7148863c9d89fd060016b987))
+
+<a name="readme-top"></a>
+
+```
+# Changelog
+```
+
 ## [1.4.0](https://github.com/citadel2024/team-lint/compare/v1.3.1...v1.4.0) (2025-08-29)
 
 ### Features
