@@ -4,6 +4,18 @@
 # Changelog
 ```
 
+## [1.6.0](https://github.com/citadel2024/team-lint/compare/v1.5.0...v1.6.0) (2025-09-10)
+
+### Features
+
+- **eslint:** remove prettier rules and move sort-import rule into prettier config and remove duplicated rules. ([46d5ea1](https://github.com/citadel2024/team-lint/commit/46d5ea169375b0280e9aa3b347a86e6273b8431b))
+
+<a name="readme-top"></a>
+
+```
+# Changelog
+```
+
 ## [1.5.0](https://github.com/citadel2024/team-lint/compare/v1.4.1...v1.5.0) (2025-08-31)
 
 ### Features
