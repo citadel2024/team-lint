@@ -16,7 +16,6 @@ export default {
     ],
     plugins: [
         require.resolve('prettier-plugin-sh'),
-        require.resolve('prettier-plugin-organize-imports'),
         require.resolve('prettier-plugin-packagejson'),
         require.resolve('prettier-plugin-sort-json'),
         require.resolve('@trivago/prettier-plugin-sort-imports'),

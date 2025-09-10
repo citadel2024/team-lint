@@ -1,13 +1,12 @@
+import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
-import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
-import eslintPluginPrettier from 'eslint-plugin-prettier';
-import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
-import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import eslintPluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
-import {FlatCompat} from "@eslint/eslintrc";
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
-
+import tseslint from 'typescript-eslint';
 
 const compat = new FlatCompat({
     baseDirectory: import.meta.url,
@@ -16,11 +15,14 @@ const compat = new FlatCompat({
 export default [
     js.configs.recommended,
     ...compat.extends(
+        'plugin:import/typescript',
         'plugin:import/recommended',
         'plugin:react-hooks/recommended',
         'plugin:react/recommended',
-        'plugin:prettier/recommended'
     ),
+    ...tseslint.configs.recommended,
+    // Disable rules conflict with prettier.
+    eslintConfigPrettier,
     {
         // Note: there should be no other properties in this object
         ignores: [
@@ -42,21 +44,19 @@ export default [
     {
         languageOptions: {
             ecmaVersion: 2022,
-            sourceType: "module",
             globals: {
                 ...globals.browser,
                 ...globals.node,
             },
+            sourceType: 'module',
         },
     },
     {
         plugins: {
+            'react-hooks': eslintPluginReactHooks,
+            'sort-keys-fix': eslintPluginSortKeysFix,
             'unicorn': eslintPluginUnicorn,
             'unused-imports': eslintPluginUnusedImports,
-            'simple-import-sort': eslintPluginSimpleImportSort,
-            'sort-keys-fix': eslintPluginSortKeysFix,
-            'react-hooks': eslintPluginReactHooks,
-            'prettier': eslintPluginPrettier
         },
         rules: {
             '@typescript-eslint/ban-ts-comment': 0,
@@ -67,31 +67,6 @@ export default [
             'no-empty': 'warn',
             'no-extra-boolean-cast': 'warn',
             'no-unused-vars': 0,
-            'prettier/prettier': [
-                'error',
-                {
-                    arrowParens: 'always',
-                    bracketSpacing: true,
-                    endOfLine: 'lf',
-                    importOrder: ['<THIRD_PARTY_MODULES>', '^@/(.*)$', '^[./]'],
-                    importOrderSeparation: true,
-                    importOrderSortSpecifiers: true,
-                    plugins: [
-                        require.resolve('prettier-plugin-sh'),
-                        require.resolve('prettier-plugin-organize-imports'),
-                        require.resolve('prettier-plugin-packagejson'),
-                        require.resolve('prettier-plugin-sort-json'),
-                        require.resolve('@trivago/prettier-plugin-sort-imports')
-                    ],
-                    printWidth: 100,
-                    proseWrap: 'never',
-                    quoteProps: 'consistent',
-                    singleQuote: true,
-                    tabWidth: 4,
-                    trailingComma: 'all',
-                    useTabs: false
-                }
-            ],
             'react-hooks/exhaustive-deps': 'warn',
             'react-hooks/rules-of-hooks': 'error',
             'react/display-name': 0,
@@ -99,7 +74,6 @@ export default [
             'react/jsx-sort-props': 'error',
             'react/prop-types': 0,
             'react/react-in-jsx-scope': 0,
-            'simple-import-sort/exports': 'error',
             'sort-keys-fix/sort-keys-fix': 'error',
             'unicorn/explicit-length-check': 'warn',
             'unicorn/filename-case': 0,
@@ -128,9 +102,21 @@ export default [
                     args: 'after-used',
                     argsIgnorePattern: '^_',
                     vars: 'all',
-                    varsIgnorePattern: '^_'
-                }
-            ]
-        }
-    }
+                    varsIgnorePattern: '^_',
+                },
+            ],
+        },
+    },
+    {
+        settings: {
+            'import/resolver': {
+                node: {
+                    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                },
+                typescript: {
+                    alwaysTryTypes: true,
+                },
+            },
+        },
+    },
 ];
