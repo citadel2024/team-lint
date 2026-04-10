@@ -4,6 +4,18 @@
 # Changelog
 ```
 
+## [1.6.1](https://github.com/citadel2024/team-lint/compare/v1.6.0...v1.6.1) (2026-04-10)
+
+### Bug Fixes
+
+- **directory:** fix baseDirectory undefined issue and export modules. ([60f4413](https://github.com/citadel2024/team-lint/commit/60f441363ade32933f935408fb405e96f5f2a525))
+
+<a name="readme-top"></a>
+
+```
+# Changelog
+```
+
 ## [1.6.0](https://github.com/citadel2024/team-lint/compare/v1.5.0...v1.6.0) (2025-09-10)
 
 ### Features
