@@ -12,6 +12,13 @@
     "license": "MIT",
     "author": "citadel2024",
     "sideEffects": false,
+    "exports": {
+        ".": "./dist/index.js",
+        "./prettier": "./dist/prettier/index.js",
+        "./eslint": "./dist/eslint/index.js",
+        "./stylelint": "./dist/stylelint/index.js",
+        "./commitlint": "./dist/commitlint/index.js"
+    },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "files": [

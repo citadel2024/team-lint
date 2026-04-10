@@ -9,7 +9,9 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 const compat = new FlatCompat({
-    baseDirectory: import.meta.url,
+    // Keep plugin resolution anchored to this package, regardless of caller cwd.
+    baseDirectory: __dirname,
+    resolvePluginsRelativeTo: __dirname,
 });
 
 export default [
