@@ -13,11 +13,26 @@
     "author": "citadel2024",
     "sideEffects": false,
     "exports": {
-        ".": "./dist/index.js",
-        "./prettier": "./dist/prettier/index.js",
-        "./eslint": "./dist/eslint/index.js",
-        "./stylelint": "./dist/stylelint/index.js",
-        "./commitlint": "./dist/commitlint/index.js"
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        },
+        "./prettier": {
+            "types": "./dist/prettier/index.d.ts",
+            "default": "./dist/prettier/index.js"
+        },
+        "./eslint": {
+            "types": "./dist/eslint/index.d.ts",
+            "default": "./dist/eslint/index.js"
+        },
+        "./stylelint": {
+            "types": "./dist/stylelint/index.d.ts",
+            "default": "./dist/stylelint/index.js"
+        },
+        "./commitlint": {
+            "types": "./dist/commitlint/index.d.ts",
+            "default": "./dist/commitlint/index.js"
+        }
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
