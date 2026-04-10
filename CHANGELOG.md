@@ -4,6 +4,18 @@
 # Changelog
 ```
 
+## [1.6.2](https://github.com/citadel2024/team-lint/compare/v1.6.1...v1.6.2) (2026-04-10)
+
+### Bug Fixes
+
+- **exports:** add typed subpath exports ([45a0c65](https://github.com/citadel2024/team-lint/commit/45a0c6556ca006e925b83138fdf23f13813e393f))
+
+<a name="readme-top"></a>
+
+```
+# Changelog
+```
+
 ## [1.6.1](https://github.com/citadel2024/team-lint/compare/v1.6.0...v1.6.1) (2026-04-10)
 
 ### Bug Fixes
