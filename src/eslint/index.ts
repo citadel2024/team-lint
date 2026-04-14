@@ -1,5 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
+import type { Linter } from 'eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import eslintPluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
@@ -14,7 +15,7 @@ const compat = new FlatCompat({
     resolvePluginsRelativeTo: __dirname,
 });
 
-export default [
+const config: Linter.FlatConfig[] = [
     js.configs.recommended,
     ...compat.extends(
         'plugin:import/typescript',
@@ -122,3 +123,5 @@ export default [
         },
     },
 ];
+
+export default config;
