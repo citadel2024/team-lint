@@ -4,6 +4,18 @@
 # Changelog
 ```
 
+## [1.6.3](https://github.com/citadel2024/team-lint/compare/v1.6.2...v1.6.3) (2026-04-14)
+
+### Bug Fixes
+
+- **ts:** migrate moduleResolution to bundler and stabilize eslint config typing ([dfa33b3](https://github.com/citadel2024/team-lint/commit/dfa33b3f036c35a6d18feae30ba9b8158576306d))
+
+<a name="readme-top"></a>
+
+```
+# Changelog
+```
+
 ## [1.6.2](https://github.com/citadel2024/team-lint/compare/v1.6.1...v1.6.2) (2026-04-10)
 
 ### Bug Fixes
