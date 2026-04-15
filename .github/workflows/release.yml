@@ -18,10 +18,17 @@ jobs:
             issues: write # to be able to comment on released issues
             pull-requests: write # to be able to comment on released pull requests
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
 
             - name: Install bun
-              uses: oven-sh/setup-bun@v1
+              uses: oven-sh/setup-bun@v2
+
+            - name: Cache dependencies
+              uses: actions/setup-node@v6
+              with:
+                  node-version: 22
+                  cache: pnpm
+                  cache-dependency-path: pnpm-lock.yaml
 
             - name: Install deps
               run: bun i
