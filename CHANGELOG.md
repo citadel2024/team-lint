@@ -4,6 +4,19 @@
 # Changelog
 ```
 
+## [1.7.0](https://github.com/citadel2024/team-lint/compare/v1.6.3...v1.7.0) (2026-04-15)
+
+### Features
+
+- **ci:** fix cache setup and upload package-lock ([3aecc04](https://github.com/citadel2024/team-lint/commit/3aecc0469d27ae673fb541943092f18e90e5eebe))
+- **ci:** upgrade GHA actions and enable cache. ([3aee15a](https://github.com/citadel2024/team-lint/commit/3aee15a818a7c4a794da4480dfdac5b940bb8005))
+
+<a name="readme-top"></a>
+
+```
+# Changelog
+```
+
 ## [1.6.3](https://github.com/citadel2024/team-lint/compare/v1.6.2...v1.6.3) (2026-04-14)
 
 ### Bug Fixes
