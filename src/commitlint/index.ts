@@ -5,6 +5,9 @@ export default {
         // Keep body/footer formatting as warnings instead of hard errors.
         'body-leading-blank': [1, 'always'],
 
+        // Auto-generated release notes may contain long links.
+        'body-max-line-length': [0, 'always', 100],
+
         'footer-leading-blank': [1, 'always'],
 
         // Limit the header line length. 72 can be too strict, so 100 is a practical default.
@@ -21,7 +24,6 @@ export default {
 
         // Type must be lowercase, for example: feat / fix, not FEAT / Fix.
         'type-case': [2, 'always', 'lower-case'],
-
         // Type and subject must not be empty.
         'type-empty': [2, 'never'],
 

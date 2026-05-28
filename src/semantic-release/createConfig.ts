@@ -63,7 +63,7 @@ export const createConfig = (options?: Options): SemRelOptions => {
         ],
         opts.enableNPM ? npmConfig : '',
         opts.enableGithub ? githubConfig : '',
-        git(options),
+        git(opts),
     ];
 
     return {

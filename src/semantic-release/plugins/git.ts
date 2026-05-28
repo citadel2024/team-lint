@@ -16,8 +16,7 @@ const git = (options: GitPluginOpts = {}): PluginSpec => {
                     : ['CHANGELOG.md', 'package.json'].concat(options.gitAssets!).filter(Boolean),
             message: options.message
                 ? options.message
-                : // eslint-disable-next-line no-template-curly-in-string
-                  ':bookmark: chore(release): ${nextRelease.gitTag} [skip ci] \n\n${nextRelease.notes}',
+                : 'chore(release): ${nextRelease.gitTag} [skip ci] \n\n${nextRelease.notes}',
         },
     ];
 };
