@@ -1,5 +1,21 @@
 <a name="readme-top"></a>
 
+    # Changelog
+
+## [1.8.0](https://github.com/citadel2024/team-lint/compare/v1.7.0...v1.8.0) (2026-05-28)
+
+### Features
+
+* **ci:** disable husky in release ([bcdcc0d](https://github.com/citadel2024/team-lint/commit/bcdcc0d13caaafbff5ddc10043f1ae494aeb4f43))
+* **commitlint:** add more rules ([7be5eab](https://github.com/citadel2024/team-lint/commit/7be5eab2d78d831dc0a7dc9007725e40259541f5))
+
+### Bug Fixes
+
+* **ci:** add missing dep ([0c4b73c](https://github.com/citadel2024/team-lint/commit/0c4b73c1dea3f34ea98f955ca6864d7b27a6d95c))
+* **lint,release:** update commitlint rules and fix git plugin message template ([a4633be](https://github.com/citadel2024/team-lint/commit/a4633bed8f52a208080c7ee709d1b2db13aecfd7))
+
+<a name="readme-top"></a>
+
 ```
 # Changelog
 ```
